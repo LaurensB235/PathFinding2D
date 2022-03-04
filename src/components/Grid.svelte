@@ -7,13 +7,19 @@
         [1,0,0,0,0]
         ]
 
+
+    const clickedTile = (row_i, col_i) => {
+        console.log("joew");
+        maze[row_i][col_i] = 1 -  maze[row_i][col_i];
+    }
+
 </script>
 
 <div class="container">
-    {#each maze as row}
+    {#each maze as row, row_i}
         <div class="row">
-            {#each row as col}
-                <div class="col col_{col}"></div>
+            {#each row as col, col_i}
+                <div class="col col_{col}" on:click={() => clickedTile(row_i, col_i)}></div>
             {/each}
         </div>
     {/each}

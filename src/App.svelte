@@ -30,6 +30,7 @@
 	}
 
 	const subtractHorizontal = () => {
+		console.log(maze);
 		maze.forEach(row => {
 			row.pop()
 		})
@@ -43,7 +44,7 @@
 	<Button text="subtract horizontal" clickFunction={subtractHorizontal}/>
 	<Button text="add vertical" clickFunction={addVertical}/>
 	<Button text="subtract vertical" clickFunction={subtractVertical}/>
-	<Grid {maze} />
+	<Grid bind:maze />
 </main>
 
 <style>
