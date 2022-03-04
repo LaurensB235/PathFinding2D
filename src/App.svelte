@@ -12,19 +12,37 @@
         ]
 
 
-	const extendVertical = () => {
-
+	const addVertical = () => {
+		maze.push(new Array(maze[0].length).fill(0));
+		maze = maze; // Force update for child components
 	}
 
-	const extendHorizontal = () => {
-		
+	const subtractVertical = () => {
+		maze.pop();
+		maze = maze; // Force update for child components
+	}
+
+	const addHorizontal = () => {
+		maze.forEach(row => {
+			row.push(0);
+		})
+		maze = maze; // Force update for child components
+	}
+
+	const subtractHorizontal = () => {
+		maze.forEach(row => {
+			row.pop()
+		})
+		maze = maze; // Force update for child components
 	}
 
 </script>
 
 <main>
-	<Button text="extend horizontal" clickFunction={extendHorizontal}/>
-	<Button text="extend vertical" clickFunction={extendVertical}/>
+	<Button text="add horizontal" clickFunction={addHorizontal}/>
+	<Button text="subtract horizontal" clickFunction={subtractHorizontal}/>
+	<Button text="add vertical" clickFunction={addVertical}/>
+	<Button text="subtract vertical" clickFunction={subtractVertical}/>
 	<Grid {maze} />
 </main>
 
