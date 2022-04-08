@@ -9,8 +9,7 @@
 
 
     const clickedTile = (row_i, col_i) => {
-        console.log("joew");
-        maze[row_i][col_i] = 1 -  maze[row_i][col_i];
+        maze[row_i][col_i] = 1 -  maze[row_i][col_i]; //Make this apply a number based on selected type to place down
     }
 
 </script>

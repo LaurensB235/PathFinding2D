@@ -30,7 +30,6 @@
 	}
 
 	const subtractHorizontal = () => {
-		console.log(maze);
 		maze.forEach(row => {
 			row.pop()
 		})
@@ -56,6 +55,4 @@
 		max-width: 240px;
 		margin: 0 auto;
 	}
-
-	
 </style>
