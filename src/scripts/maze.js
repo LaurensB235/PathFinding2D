@@ -39,3 +39,7 @@ export const changeTile = (row_i, col_i) => {
         return maze;
     })
 }
+
+export const findPath = () => {
+    console.log("hoi");
+}

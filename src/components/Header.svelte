@@ -8,15 +8,22 @@
 
 <header>
     <div>
-        <DropDown text="Resize Maze">
-            <Button text="add horizontal" clickFunction={addHorizontal}/>
-            <Button text="subtract horizontal" clickFunction={subtractHorizontal}/>
-            <Button text="add vertical" clickFunction={addVertical}/>
-            <Button text="subtract vertical" clickFunction={subtractVertical}/>
+        <DropDown text="Resize Grid">
+            <Button text="X+" clickFunction={addHorizontal}/>
+            <Button text="X-" clickFunction={subtractHorizontal}/>
+            <Button text="Y+" clickFunction={addVertical}/>
+            <Button text="Y-" clickFunction={subtractVertical}/>
         </DropDown>
     </div>  
     <div>
+        <DropDown text="Algorithm">
+            <!-- TODO algo  -->
+        </DropDown>
+    </div>
+    <div>
         <DropDown text="Select Tile">
+            <Button text="End" clickFunction={() => pickedTile.set(3)}/>
+            <Button text="Start" clickFunction={() => pickedTile.set(2)}/>
             <Button text="Closed" clickFunction={() => pickedTile.set(1)}/>
             <Button text="Open" clickFunction={() => pickedTile.set(0)}/>
         </DropDown>
@@ -24,9 +31,12 @@
 </header>
 
 <style>
+    div {
+        position: relative;
+    }
     header {
         display: flex;
-        justify-content: space-between;
-        width: 60%;
+        justify-content: space-around;
+        width: 100%;
     }
 </style>
