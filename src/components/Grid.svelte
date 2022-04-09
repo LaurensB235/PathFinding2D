@@ -1,44 +1,37 @@
 <script>
-    export let maze = [
-        [0,0,0,0,1],
-        [0,0,0,0,0],
-        [0,0,1,0,0],
-        [0,0,0,0,0],
-        [1,0,0,0,0]
-        ]
-
-
-    const clickedTile = (row_i, col_i) => {
-        maze[row_i][col_i] = 1 -  maze[row_i][col_i]; //Make this apply a number based on selected type to place down
-    }
+    import { maze } from '../scripts/store';
+    import { changeTile } from '../scripts/maze';
 
 </script>
 
 <div class="container">
-    {#each maze as row, row_i}
+    {#each $maze as row, row_i}
         <div class="row">
             {#each row as col, col_i}
-                <div class="col col_{col}" on:click={() => clickedTile(row_i, col_i)}></div>
+                <div class="col col_{col}" on:click={() => changeTile(row_i, col_i)}></div>
             {/each}
         </div>
     {/each}
 </div>
 
-
 <style>
     .container {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        aspect-ratio: 1;
         padding: 0.5em;
         border-radius: 1rem;
         background-color: rgb(72, 98, 107);
     }
 
     .row { 
+        flex: 2 1 auto;
         display: flex;
     }
 
     .col {
-        flex-grow: 1;
-        aspect-ratio: 1;
+        flex: 2 1 auto;
         border-radius: 1rem;
         transition: border-radius .1s, filter .25s;
     }

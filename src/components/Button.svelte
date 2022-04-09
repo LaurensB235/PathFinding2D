@@ -7,9 +7,7 @@
 
 </script>
 
-
 <div class="button" on:click={clickFunction}>{text}</div>
-
 
 <style>
     .button:hover {
