@@ -83,6 +83,22 @@
         border-radius: 50px;
     }
 
+    .col_7 {
+        background-color: rgb(217, 255, 0);
+    }
+
+    .col_6 {
+        background-color: rgb(23, 6, 255);
+    }
+
+    .col_5 {
+        background-color: rgb(197, 6, 255);
+    }
+
+    .col_4 {
+        background-color: rgb(236, 5, 5);
+    }
+
     .col_3 {
         background-color: rgb(0, 143, 24);
     }
