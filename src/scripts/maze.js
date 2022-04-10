@@ -41,5 +41,30 @@ export const changeTile = (row_i, col_i) => {
 }
 
 export const findPath = () => {
-    console.log("hoi");
+    let setupMaze = get(maze);
+
+    let startNodes = getStartNodes(setupMaze);
+
+    console.log(startNodes)
+
+}
+
+const getStartNodes = (maze) => {
+    let startNodes = [];
+
+    forEachNode(maze, (i_row, row, i_col, col) => {
+        if (col === 2) {
+            startNodes.push({row:i_row, col:i_col, value:col});
+        }
+    });
+
+    return startNodes;
+}
+
+const forEachNode = (maze, callback) => {
+    maze.forEach((row, i_row) => {
+        row.forEach((col, i_col) => {
+            callback(i_row, row, i_col, col);
+        })
+    })
 }
